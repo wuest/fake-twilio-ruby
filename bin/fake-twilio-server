@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'sinatra'
+
+WRITE_FILES = ENV.key?('WRITE_OUTPUT')
+
+# By default, bind to all interfaces on port 4444, using the thin webserver.
+set :bind, ENV.key?('LISTEN_IP') ? ENV['LISTEN_IP'] : '0.0.0.0'
+set :port, ENV.key?('LISTEN_PORT') ? ENV['LISTEN_PORT'] : 4444
+set :server, ENV.key?('HTTP_SERVER') ? ENV['HTTP_SERVER'] : 'thin'
+
+require 'fake_twilio/server/routes'
