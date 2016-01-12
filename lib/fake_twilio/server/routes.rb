@@ -1,5 +1,6 @@
 require 'fake_twilio/server/routes/messages'
 require 'fake_twilio/server/routes/phonenumbers'
+require 'fake_twilio/server/routes/incomingphonenumbers'
 
 helpers do
   # Optionally write a file, predicated upon the $WRITE_FILES global variable.
